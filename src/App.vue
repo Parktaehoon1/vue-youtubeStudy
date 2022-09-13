@@ -1,26 +1,56 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <ul>
+      <li v-for="(item, index) in data" :key="index">
+        <!-- {{item.id}} -->
+          <iframe id="ytplayer" type="text/html" width="400" height="400"
+      :src="`https://www.youtube.com/embed/${item.id}`" frameborder="0" allowfullscreen />
+
+      </li>
+    </ul>
+
+
+    <!-- <iframe id="ytplayer" type="text/html" width="400" height="400"
+      :src="`https://www.youtube.com/embed/${data.items[2].id}`" frameborder="0" allowfullscreen /> -->
+
+
+    <!-- {{data}} -->
+
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import {
+    computed
+  } from 'vue';
+  import {
+    useStore
+  } from 'vuex';
+  export default {
+    components: {},
+    setup() {
+      const store = useStore()
+      store.dispatch('fetchYoutubeList')
+      const data = computed(() => store.getters.getYoutubeList)
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+
+      // const obj = {
+      //   product: 'MacBook pro',
+      //   host: 'yongyong',
+      //   password: 1234
+      // };
+
+      // const count2 = Object.keys(obj).length;
+      // console.log(count2) // 3개
+
+      return {
+        data,
+        // count2
+      }
+    }
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
