@@ -1,21 +1,25 @@
 <template>
-  <div>
-    <ul>
-      <li v-for="(item, index) in data" :key="index">
-        <!-- {{item.id}} -->
-          <iframe id="ytplayer" type="text/html" width="400" height="400"
-      :src="`https://www.youtube.com/embed/${item.id}`" frameborder="0" allowfullscreen />
-
-      </li>
-    </ul>
-
-
-    <!-- <iframe id="ytplayer" type="text/html" width="400" height="400"
-      :src="`https://www.youtube.com/embed/${data.items[2].id}`" frameborder="0" allowfullscreen /> -->
-
-
-    <!-- {{data}} -->
-
+  <div class="wrap">
+    <div class="container">
+      <header>
+        <ul>
+          <li><a href="#">가나</a></li>
+          <li><a href="#">다라</a></li>
+          <li><a href="#">마바</a></li>
+          <li><a href="#">사아</a></li>
+          <li><a href="#">자카</a></li>
+        </ul>
+      </header>
+      <div class="container-left"></div>
+      <div class="container-right">
+        <ul class="movie">
+          <li class="movielist" v-for="(item, index) in data" :key="index">
+            <iframe id="ytplayer" type="text/html" width="350" height="400"
+              :src="`https://www.youtube.com/embed/${item.id}`" frameborder="0" allowfullscreen />
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -52,5 +56,39 @@
 </script>
 
 <style>
+  .wrap {
+    position: relative;
+    display: block;
+  }
 
+  .container {
+    position: relative;
+    display: flex;
+  }
+
+  .container-left {
+    position: relative;
+    display: block;
+    width: 20%;
+  }
+
+  .container-right {
+    position: relative;
+    display: block;
+    width: 80%;
+  }
+
+  .movie {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .movielist {
+    position: relative;
+    display: block;
+    width: 23%;
+    margin: 10px;
+  }
 </style>
