@@ -1,16 +1,10 @@
 <template>
   <div class="wrap">
+      <HeaderView/>
     <div class="container">
-      <header>
-        <ul>
-          <li><a href="#">가나</a></li>
-          <li><a href="#">다라</a></li>
-          <li><a href="#">마바</a></li>
-          <li><a href="#">사아</a></li>
-          <li><a href="#">자카</a></li>
-        </ul>
-      </header>
-      <div class="container-left"></div>
+      <div class="container-left">
+        <AsideView />
+      </div>
       <div class="container-right">
         <ul class="movie">
           <li class="movielist" v-for="(item, index) in data" :key="index">
@@ -24,6 +18,8 @@
 </template>
 
 <script>
+  import HeaderView from './components/HeaderView.vue';
+  import AsideView from './components/AsideView.vue';
   import {
     computed
   } from 'vue';
@@ -31,7 +27,9 @@
     useStore
   } from 'vuex';
   export default {
-    components: {},
+    components: {
+      HeaderView,AsideView
+    },
     setup() {
       const store = useStore()
       store.dispatch('fetchYoutubeList')
