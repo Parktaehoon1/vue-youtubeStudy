@@ -10,7 +10,12 @@ function fetchAllApi() {
     // then(), catch() 를 통해 결과 확인 가능
     return axios.get(`${config.baseUrl}`)
 }
+function fetchInfoApi() {
+    // axios 호출의 결과는 Promise 객체이므로 
+    // then(), catch() 를 통해 결과 확인 가능
+    return axios.get(`${config.baseUrl}`)
+}
 
 export {
-    fetchAllApi
+    fetchAllApi,fetchInfoApi
 }
