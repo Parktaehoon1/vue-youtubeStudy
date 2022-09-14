@@ -21,7 +21,7 @@
         setup(props) {
             const router = useRouter();
             const detailMove = () => {
-                router.push('/detail/' + props.youtubeData.snippet.channelId)
+                router.push('/detail/' + props.youtubeData.id)
             }
             return {
                 detailMove,
@@ -31,5 +31,7 @@
 </script>
 
 <style>
-
+.movie-desc{
+    cursor: pointer;
+}
 </style>

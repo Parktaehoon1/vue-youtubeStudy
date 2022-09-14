@@ -1,7 +1,7 @@
 <template>
   <div class="main-list">
     <ul class="list-depth">
-        <li><a href="#"><i class="fas fa-home"></i>홈</a></li>
+        <li><a href="/"><i class="fas fa-home"></i>홈</a></li>
         <li><a href="#"><i class="fas fa-compass"></i>탐색</a></li>
         <li><a href="#"><i class="fas fa-play-circle"></i>Shorts</a></li>
         <li><a href="#"><i class="fas fa-paper-plane"></i>구독</a></li>
