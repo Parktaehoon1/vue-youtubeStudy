@@ -6,21 +6,6 @@
         <AsideView />
       </div>
       <div class="container-right">
-        <!-- <ul class="movie">
-          <li class="movielist" v-for="(item, index) in data" :key="index">
-            <iframe id="ytplayer" type="text/html" width="350" height="350"
-              :src="`https://www.youtube.com/embed/${item.id}`" frameborder="0" allowfullscreen />
-            <div class="movie-desc">
-            <a href="#" class="thumbnail">
-              <img :src="item.snippet.thumbnails.default.url" alt="">
-            </a>
-            <div>
-            <p class="title">{{item.snippet.title}}</p>
-            <p class="date">{{item.snippet.publishedAt}}</p>
-            </div>
-            </div>
-          </li>
-        </ul> -->
         <RouterView />
       </div>
     </div>
@@ -146,37 +131,4 @@
     margin: 0 auto;
   }
 
-  .title {
-    position: relative;
-    display: block;
-    font-size: 16px;
-    font-weight: 700;
-  }
-
-  .date {
-    position: relative;
-    display: block;
-    font-size: 13px;
-  }
-  .thumbnail{
-    position: relative;
-    display: block;
-    width: 50px;
-    height: 50px;
-  }
-
-  .thumbnail img{
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;    
-    border-radius: 50%;
-  }
-
-  .movie-desc{
-    position: relative;
-    display: flex;
-    justify-content: start;
-    margin-top: 10px;
-  }
 </style>
